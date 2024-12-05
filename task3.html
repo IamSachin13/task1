@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="form-container">
+    <form action="#" method="post">
+      
+      <!-- Name and Email -->
+      <section class="form-section">
+        <h2>Personal Details</h2>
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </section>
+
+      <!-- Experience Rating -->
+      <section class="form-section">
+        <h2>Your Experience</h2>
+        <label>Rate your experience:</label>
+        <div class="star-rating" style="display: flex;">
+          <input type="radio" id="star1" name="experience" value="1">
+          <label for="star1">&#9733;</label>
+          <input type="radio" id="star2" name="experience" value="2">
+          <label for="star2">&#9733;</label>
+          <input type="radio" id="star3" name="experience" value="3">
+          <label for="star3">&#9733;</label>
+          <input type="radio" id="star4" name="experience" value="4">
+          <label for="star4">&#9733;</label>
+          <input type="radio" id="star5" name="experience" value="5">
+          <label for="star5">&#9733;</label>
+        </div>
+      </section>
+
+      <!-- Rating for Services -->
+      <section class="form-section">
+        <h2>Service Ratings</h2>
+        
+        <div class="rating-options" style="display:flex;">
+        <label> Purchased:</label>
+          <label><input type="radio" name="service-purchase" value="very-unsatisfied"> Very Unsatisfied</label>
+          <label><input type="radio" name="service-purchase" value="unsatisfied"> Unsatisfied</label>
+          <label><input type="radio" name="service-purchase" value="neutral"> Neutral</label>
+          <label><input type="radio" name="service-purchase" value="satisfied"> Satisfied</label>
+          <label><input type="radio" name="service-purchase" value="very-satisfied"> Very Satisfied</label>
+        </div>
+
+        <div class="rating-options" style="display: flex;">
+        <label>Rate Service Quality:</label>
+          <label><input type="radio" name="service-quality" value="very-unsatisfied"> Very Unsatisfied</label>
+          <label><input type="radio" name="service-quality" value="unsatisfied"> Unsatisfied</label>
+          <label><input type="radio" name="service-quality" value="neutral"> Neutral</label>
+          <label><input type="radio" name="service-quality" value="satisfied"> Satisfied</label>
+          <label><input type="radio" name="service-quality" value="very-satisfied"> Very Satisfied</label>
+        </div>
+
+        <label>Rate Company Overall:</label>
+        <div class="rating-options" style="display: flex;">
+          <label><input type="radio" name="company-overall" value="very-unsatisfied"> Very Unsatisfied</label>
+          <label><input type="radio" name="company-overall" value="unsatisfied"> Unsatisfied</label>
+          <label><input type="radio" name="company-overall" value="neutral"> Neutral</label>
+          <label><input type="radio" name="company-overall" value="satisfied"> Satisfied</label>
+          <label><input type="radio" name="company-overall" value="very-satisfied"> Very Satisfied</label>
+        </div>
+      </section>
+
+      <!-- Additional Comments -->
+      <section class="form-section">
+        <h2>Additional Comments</h2>
+        <textarea name="comments" rows="5" placeholder="Please provide any additional feedback or suggestions"></textarea>
+      </section>
+
+      <!-- Submit Button -->
+      <section class="form-section">
+        <button type="submit">Submit</button>
+      </section>
+      
+    </form>
+  </div>
+</body>
+</html>
