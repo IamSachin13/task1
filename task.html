@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Event 1</h2>
+        <p>Number of available seats: <span id="available-seats">23</span></p>
+        <div class="form-container">
+            <div class="image-placeholder">
+                <p>Image</p>
+            </div>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone No.:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="num-seats">Number of seats:</label>
+                <select id="num-seats" name="num-seats" onchange="updateAttendeeFields()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+
+                <div id="attendee-names">
+                    <label for="attendee-2">Name of Attendee 2:</label>
+                    <input type="text" id="attendee-2" name="attendee-2">
+                </div>
+
+                <div class="button-group">
+                    <button type="submit">Submit</button>
+                    <button type="button" onclick="cancelForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function updateAttendeeFields() {
+            const numSeats = document.getElementById('num-seats').value;
+            const attendeeNames = document.getElementById('attendee-names');
+            attendeeNames.innerHTML = '';
+
+            for (let i = 2; i <= numSeats; i++) {
+                const label = document.createElement('label');
+                label.setAttribute('for', `attendee-${i}`);
+                label.textContent = `Name of Attendee ${i}:`;
+
+                const input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                input.setAttribute('id', `attendee-${i}`);
+                input.setAttribute('name', `attendee-${i}`);
+
+                attendeeNames.appendChild(label);
+                attendeeNames.appendChild(input);
+            }
+        }
+
+        function cancelForm() {
+            document.querySelector('form').reset();
+            document.getElementById('attendee-names').innerHTML = '';
+        }
+
+
+
+        
+    </script>
+</body>
+</html>
